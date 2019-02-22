@@ -16,5 +16,16 @@ module.exports = {
 				'C:\\Users\\tanyan\\Desktop\\xcx_component\\mhwz\\public\\less\\variables.less'
 			]
 		}
+	},
+	css: {
+		loaderOptions: {
+			postcss: {
+				plugins: [
+					require("postcss-px2rem")({
+						'remUnit': 75, //根据设计稿调整
+					})
+				]
+			}
+		}
 	}
 }

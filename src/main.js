@@ -8,8 +8,9 @@ import '../public/less/reset.less'
 import '../public/less/base.less'
 import '../public/less/common.less'
 import './plugins/element.js'
+import 'lib-flexible'
 Vue.config.productionTip = false
-
+Vue.prototype.$store = store
 new Vue({
   router,
   store,

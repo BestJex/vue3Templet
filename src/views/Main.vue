@@ -1,17 +1,19 @@
 <template>
-	<div class="main absolute ">
-		<div class="main_common main_header flex flex_align_center ">
-			<div style="width:20%">
-				<router-link to="/index">
-					<img src="../assets/1.png" style="height: 60px;" />
-				</router-link>
+	<div class="main  ">
+		<div class="fixed " style="background: #fff;">
+			<div class="common_width main_header flex flex_align_center ">
+				<div style="width:20%">
+					<router-link to="/index">
+						<img src="../assets/1.png" style="height: 60px;" />
+					</router-link>
+				</div>
+				<div style="width:80%"><MyHeader /></div>
 			</div>
-			<div style="width:70%"><MyHeader /></div>
 		</div>
 		<div class="main_show">
 			<transition name="view"> <router-view /> </transition>
 		</div>
-		<div class="main_common main_footer"><MyFooter /></div>
+		<div class="common_width main_footer"><MyFooter /></div>
 	</div>
 </template>
 <script>
@@ -27,21 +29,20 @@ export default {
 	},
 	watch: {
 		$route(to, from) {}
+	},
+	mounted() {
+		let _this = this;
+		window.onresize = function() {
+			_this.$store.commit('screenResize');
+		};
 	}
 };
 </script>
 
 <style scoped lang="less">
 .main {
-	width: 99%;
-	padding: 10px 0.5%;
-	min-width: 1210px;
-	top: 0;
-	bottom: 0;
-	.main_common {
-		width: 80%;
-		padding: 10px 0;
-		margin: 0 auto;
+	.main_show {
+		height: 1000px;
 	}
 	.main_header {
 		border-bottom: 2px solid @borderc5;

@@ -1,26 +1,52 @@
-	*::-webkit-scrollbar {
-        display: none !important;
-    }
-.c_width{
-	width: 100%;
-	// border:1px solid red;
+*::-webkit-scrollbar {
+	// display: none !important;
 }
-.main_left {
-	width: 15%;
-	min-width: 200px;
-	&.main_menu {
-		height: 800px;	
-		// border: 1px solid #fff;
+.common_width {
+	padding: 10px 0;
+	margin: 0 auto;
+}
+/*响应式处理*/
+// >=1200 大屏幕
+@media screen and (max-width: 1920px) and (min-width: 1200px) {
+	.common_width {
+		width: 80%;
+		min-width: 1200px;
 	}
 }
-.main_right {
-	width: 84%;
-	min-width: 840px;
-	margin-left: 1%;
-	&.main_content {
-		height: 800px;
+// >=992 中屏幕
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+	.common_width {
+		width: 90%;
+		min-width: 992px;
 	}
 }
-.border_shadow{
-	 box-shadow: 1px 1px 6px @borderc5;
+// >=768 平板
+@media screen and (max-width: 992px) and (min-width: 768px) {
+	.common_width {
+		width: 90%;
+		min-width: 768px;
+	}
+}
+// 手机
+@media screen and (max-width: 768px) {
+	.common_width {
+		width: 90%;
+		min-width: 750px;
+	}
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+	&:link,
+	&:visited {
+		color: @textc1;
+	}
+	&:hover,
+	&:active,
+	&.aPathActive {
+		color: @textc3;
+	}
+}
+.border_shadow {
+	box-shadow: 1px 1px 6px @borderc5;
 }

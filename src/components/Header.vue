@@ -153,13 +153,9 @@ export default {
 <style scoped lang="less">
 .header {
 	.el-menu {
-		// background: @bgc1;
 		padding: 0 10px;
 		border: none;
 		border-radius: 5px;
-
-		// box-shadow: 1px 1px 6px @borderc3;
-
 		.el-menu-item {
 			color: @textc1;
 			height: 40px;
@@ -173,22 +169,39 @@ export default {
 			&:hover {
 				background: none;
 				color: @textc2;
-
 				.iconfont {
 					color: @textc2;
 				}
 			}
-
 			&.is-active {
 				color: @textc2 !important;
 				background: none;
-				// border-color: @textc2;
 				border: none;
-
 				.iconfont {
 					color: @textc2;
 				}
 			}
+		}
+	}
+}
+/deep/.el-dialog {
+	width: 80%;
+}
+/deep/.el-dialog__body {
+	// width: 600px;
+	img {
+		width: 430px;
+		height: 430px;
+	}
+}
+.el-dropdown-menu {
+	width: 300px;
+	.el-dropdown-menu__item {
+		font-size: 30px;
+		a{
+			display: inline-block;
+			width: 100%;
+			padding:16px 0;
 		}
 	}
 }

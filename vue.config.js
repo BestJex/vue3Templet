@@ -9,6 +9,8 @@
 const path = require('path')
 module.exports = {
 	// 全局less
+	baseUrl: process.env.VUE_APP_BASEURL, //部署网站根路径
+	outputDir: process.env.VUE_APP_OUTPUTDIR, //打包的时候生成的一个文件名
 	pluginOptions: {
 		'style-resources-loader': {
 			preProcessor: 'less',

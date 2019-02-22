@@ -45,10 +45,10 @@ export default {
 				mobile: 'cgadmin',
 				password: '123456'
 			};
-			// const getResult = await this.$apiRequest.requestApi('login/login', sendData, 'post')
+			const getResult = await this.$store.dispatch('apiRequest',{idx:'login', sendData, typ:'post'})
 			// console.log(getResult)
-			this.$store.commit('login', 'getResult')
-			this.$router.push('/index');
+			// this.$store.commit('login', 'getResult')
+			// this.$router.push('/index');
 		}
 	}
 };

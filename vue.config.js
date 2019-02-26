@@ -15,7 +15,7 @@ module.exports = {
 		'style-resources-loader': {
 			preProcessor: 'less',
 			patterns: [
-				'C:\\Users\\tanyan\\Desktop\\xcx_component\\mhwz\\public\\less\\variables.less'
+				path.resolve(__dirname, './public/less/variables.less')
 			]
 		}
 	},

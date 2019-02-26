@@ -41,11 +41,15 @@ export default {
 	},
 	methods: {
 		submitForm: async function() {
-			const sendData = {
-				mobile: 'cgadmin',
-				password: '123456'
+			const requestConfig = {
+				apiUrl:'news',
+				params:{
+					name:'18511043664',
+					region:'123456'
+				},
+				typ:'post'			
 			};
-			const getResult = await this.$store.dispatch('apiRequest',{idx:'login', sendData, typ:'post'})
+			const getResult = await this.$store.dispatch('apiRequest',requestConfig)
 			// console.log(getResult)
 			// this.$store.commit('login', 'getResult')
 			// this.$router.push('/index');

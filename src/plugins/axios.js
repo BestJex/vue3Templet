@@ -10,12 +10,16 @@ import axios from "axios";
 
 let config = {
   baseURL: process.env.VUE_APP_APIBASE,
-  timeout: 60 * 1000, // Timeout
+  timeout: 10000, // Timeout
+  headers: {
+    'Content-Type': 'application/json;charset=UTF-8'
+  },
   // withCredentials: true, // Check cross-site Access-Control
 };
 
 const _axios = axios.create(config);
 
+// request 请求拦截器
 _axios.interceptors.request.use(
   function(config) {
     // Do something before request is sent
@@ -28,6 +32,7 @@ _axios.interceptors.request.use(
 );
 
 // Add a response interceptor
+// request 服务器响应拦截器
 _axios.interceptors.response.use(
   function(response) {
     // Do something with response data
@@ -35,7 +40,29 @@ _axios.interceptors.response.use(
   },
   function(error) {
     // Do something with response error
-    return Promise.reject(error);
+		console.log(error)
+    if (error.response) {
+			switch (error.response.status) {
+				case 401:
+					error.message = '未授权，请重新登录'
+					break
+				case 403:
+					error.message = '没有访问权限'
+					break
+				case 404:
+					error.message = '请求错误,未找到该资源'
+					break
+				case 500:
+					error.message = '服务器端出错'
+					break
+				default:
+					break;
+			}
+		} else {
+			error.message = '连接到服务器失败'
+
+		}
+		return Promise.reject(error);
   }
 );
 

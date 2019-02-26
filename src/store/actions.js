@@ -6,13 +6,14 @@ import Vue from 'vue'
 // import '../../src/plugins/axios'
 const apiPath = {
 	sendCode:'/sms/sendCodeNew',
-	login:'/api/auth/b2blogin/password'
+	login:'/api/auth/b2blogin/password',
+	news:'https://web.xizhongyun.com/index.php/News/index1.html'
 }
 const actions = {
-	apiRequest({ commit },{idx, params,typ}){
-// 		console.log(apiPath[idx])
-// 		console.log({params})
-// 		console.log({typ})
+	apiRequest({ commit },{apiUrl, params,typ}){
+		console.log(apiPath[apiUrl])
+		console.log(params)
+		console.log({typ})
 		let loading = Loading.service({
 			lock: true,
 			text: '数据请求中，请稍后',
@@ -21,7 +22,7 @@ const actions = {
 		return new Promise((resolve, reject) => {
 				Vue.prototype.$axios({
 					method: typ || 'post',
-					url: apiPath[idx],
+					url: apiPath[apiUrl],
 					data: params || {}
 				}).then(function(r) {
 					// console.log(r)
@@ -31,6 +32,7 @@ const actions = {
 					}
 		
 				}).catch(function(error) {
+					console.log('error')
 					console.log(error)
 								Message.error(error.message);
 								loading.close()

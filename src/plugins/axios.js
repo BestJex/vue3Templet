@@ -40,7 +40,7 @@ _axios.interceptors.response.use(
   },
   function(error) {
     // Do something with response error
-		console.log(error)
+		// console.log(error)
     if (error.response) {
 			switch (error.response.status) {
 				case 401:
@@ -60,7 +60,6 @@ _axios.interceptors.response.use(
 			}
 		} else {
 			error.message = '连接到服务器失败'
-
 		}
 		return Promise.reject(error);
   }

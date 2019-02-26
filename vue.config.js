@@ -31,15 +31,15 @@ module.exports = {
 		}
 	},
 	devServer: {
-        proxy: {
-            '/apis': {
-                target: 'https://movie.douban.com/',  // target host
-                ws: true,  // proxy websockets 
-                changeOrigin: true,  // needed for virtual hosted sites
-                pathRewrite: {
-                    '^/apis': ''  // rewrite path
-                }
-            },
-        }
+        // proxy: {
+//             '/tapi': {
+//                 target: ' http://192.168.99.114:8080',  // target host
+//                 ws: true,  // proxy websockets 
+//                 changeOrigin: true,  // needed for virtual hosted sites
+//                 pathRewrite: {
+//                     '^/tapi': '/tapi'  // rewrite path
+//                 }
+//             },
+        // }
     }
 }

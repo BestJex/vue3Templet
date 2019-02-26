@@ -42,10 +42,11 @@ export default {
 	methods: {
 		submitForm: async function() {
 			const requestConfig = {
-				apiUrl:'news',
+				apiUrl:'login',
 				params:{
-					name:'18511043664',
-					region:'123456'
+					login:'18511043664',
+					password: '1',
+					b2b_type:'QiPei'
 				},
 				typ:'post'			
 			};

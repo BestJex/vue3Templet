@@ -17,9 +17,11 @@ const actions = {
 		params,
 		typ
 	}) {
-		// 		console.log(apiPath[apiUrl])
-		// 		console.log(params)
-				console.log(typ)
+		console.log(apiPath[apiUrl])
+		console.log({
+			params
+		})
+		console.log(typ)
 		let loading = Loading.service({
 				lock: true,
 				text: '数据请求中，请稍后',
@@ -27,10 +29,9 @@ const actions = {
 			}),
 			_this = this;
 		return new Promise((resolve, reject) => {
-			Vue.prototype.$axios({
-				method: typ || 'post',
-				url: apiPath[apiUrl],
-				data: params || {}
+			// this.$axios.post
+			Vue.prototype.$axios.post(apiPath[apiUrl], {
+				params
 			}).then(function(r) {
 				// console.log(r)
 				loading.close()

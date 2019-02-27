@@ -44,8 +44,8 @@ export default {
 			const requestConfig = {
 				apiUrl:'login',
 				params:{
-					login:'18511043664',
-					password: '1',
+					login:'13810609883',
+					password: '2',
 					b2b_type:'QiPei'
 				},
 				typ:'post'			

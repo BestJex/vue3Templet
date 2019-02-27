@@ -13,6 +13,7 @@ Vue.config.productionTip = false
 Vue.prototype.$store = store
 
 router.beforeEach((to, from, next) => {
+
 	//to即将进入的目标路由对象，from当前导航正要离开的路由， next : 下一步执行的函数钩子
 	// 	console.log(localStorage.getItem('isLogin'))
 	if (to.path === '/login') {
@@ -39,7 +40,7 @@ router.beforeEach((to, from, next) => {
 })
 
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+	router,
+	store,
+	render: h => h(App)
 }).$mount('#app')

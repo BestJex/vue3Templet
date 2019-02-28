@@ -33,7 +33,7 @@ module.exports = {
 	devServer: {
 		// proxy: {
 		// 	'/tapi': {
-		// 		target: process.env.VUE_APP_PROXY, // target host
+		// 		target: process.env.VUE_APP_APIBASE, // target host
 		// 		ws: true, // proxy websockets 
 		// 		changeOrigin: true, // needed for virtual hosted sites
 		// 		pathRewrite: {

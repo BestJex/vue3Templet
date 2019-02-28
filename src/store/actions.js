@@ -5,9 +5,7 @@ import {
 import Vue from 'vue'
 // import '../../src/plugins/axios'
 const apiPath = {
-	sendCode: '/sms/sendCodeNew',
-	login: '/api/auth/b2blogin/password',
-	news: 'https://web.xizhongyun.com/index.php/News/index1.html'
+
 }
 const actions = {
 	apiRequest({

@@ -1,5 +1,5 @@
 <template>
-	<div></div>
+	<div>页面2</div>
 </template>
 
 <script>

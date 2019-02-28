@@ -1,7 +1,6 @@
 <template>
 	<div class="footer">
-		<div v-if="devicesType">
-			<div class="flex flex_around footer_ul">
+			<div class="footer_ul" :class="devicesType?'flex flex_around ':''">
 				<ul>
 					<li>联系我们</li>
 					<li class="flex flex_align_center">
@@ -26,16 +25,15 @@
 				</ul>
 
 				<div class="gzh">
-					<div class="flex flex_align_center">
+					<div class="flex flex_align_center" :class="devicesType?'':'none'">
 						<i class="iconfont">&#xe64f;</i>
 						<span style="font-size: 20px;font-weight: bold;">
-							关注我
+							关注我们
 						</span>
 					</div>
 					<img src="../assets/gzh.jpg" />
 				</div>
 			</div>
-
 			<div class="flex flex_align_center flex_around" style="margin-top: 40px;">
 				<div class="flex flex_align_center">
 					<div style="padding:0 10px;">Copyright @ 2019 北京车驰合众科技有限公司</div>
@@ -43,45 +41,6 @@
 					<div>京ICP备18061093号</div>
 				</div>
 			</div>
-		</div>
-		<div v-else>
-			<div class="footer_ul">
-				<ul>
-					<li>联系我们</li>
-					<li class="flex flex_align_center">
-						<i class="iconfont" >&#xe61d;</i>
-						<span >400-9905840</span>
-					</li>
-					<li>
-						<a
-							href="https://www.xizhongyun.com"
-							target="_blank"
-							class="flex flex_align_center"
-						>
-							<i class="iconfont" >&#xe607;</i>
-
-							<span >https://www.xizhongyun.com</span>
-						</a>
-					</li>
-					<li class="flex flex_align_center">
-						<i class="iconfont" >&#xe649;</i>
-						<span >北京市大兴区亦庄镇中电金扬科技园3号楼c301</span>
-					</li>
-				</ul>
-				<div class="gzh">
-					<img src="../assets/gzh.jpg" />
-				</div>
-			</div>
-			<div class="text_center" style="margin-top: 40px;">
-				<div style="padding:0 10px;">Copyright @ 2019 北京车驰合众科技有限公司</div>
-				<div class="flex  flex_around">
-					<div class="flex flex_align_center ">
-						<img src="../assets/GFA.png" alt="" />
-						<div>京ICP备18061093号</div>
-					</div>		
-				</div>
-			</div>
-		</div>
 	</div>
 </template>
 

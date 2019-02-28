@@ -16,7 +16,9 @@ export default {
 		goLogin() {
 			this.$router.push('/login');
 		},
-		goRegister() {}
+		goRegister() {
+			this.$router.push('/register');
+		}
 	},
 	created() {},
 	mounted() {}

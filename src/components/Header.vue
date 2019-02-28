@@ -28,6 +28,10 @@
 					
 					</el-menu-item
 				>
+				<div class="flex flex_align_center">
+					<i class="iconfont" style="font-size: 36px;">&#xe61d;</i>
+					<span style="padding-left:20px;font-size: 20px;">xxx-xxxxxxx</span>
+				</div>
 			</el-menu>
 		</div>
 		<div v-else class="text_right">
@@ -84,7 +88,7 @@ export default {
 					typ: false //是否跳转其它网址
 				},
 				{
-					path: 'http://www.xyzgy.top/h5/',
+					path: 'http://www.xyzgy.xyz',
 					name: 'xyz',
 					typ: true //是否跳转其它网址
 				},

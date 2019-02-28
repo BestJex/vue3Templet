@@ -58,7 +58,7 @@
 				</el-dropdown-menu>
 			</el-dropdown>
 			<el-dialog title="" :visible.sync="visibleShow" append-to-body>
-				<div class="flex flex_around"><img src="../assets/xcx/1.jpg" alt="" /></div>
+				<div class="flex flex_around"><img src="../assets/gzh.jpg" alt="" /></div>
 			</el-dialog>
 		</div>
 	</div>

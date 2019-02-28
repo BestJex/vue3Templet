@@ -84,7 +84,7 @@ export default {
 					typ: false //是否跳转其它网址
 				},
 				{
-					path: 'http://www.xyzgy.top/h5/',
+					path: 'http://www.xyzgy.xyz/',
 					name: 'xyz',
 					typ: true //是否跳转其它网址
 				},

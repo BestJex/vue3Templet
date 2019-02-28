@@ -17,7 +17,7 @@ let config = {
   },
   withCredentials: true, // Check cross-site Access-Control
 };
-
+console.log(process.env)
 const _axios = axios.create(config);
 
 // request 请求拦截器

@@ -15,7 +15,7 @@ Vue.prototype.$store = store
 router.beforeEach((to, from, next) => {
 
 	//to即将进入的目标路由对象，from当前导航正要离开的路由， next : 下一步执行的函数钩子
-	// 	console.log(localStorage.getItem('isLogin'))
+		// console.log(localStorage.getItem('isLogin'))
 	if (to.path === '/login') {
 		localStorage.setItem('isLogin', '')
 		next() // 如果即将进入登录路由，则直接放行

@@ -43,6 +43,11 @@ export default new Router({
 				component: () => import('./views/page7.vue')
 			}]
 		},
+		{
+			path: '/help',
+			name: 'help',
+			component: () => import('./views/help.vue')
+		},
 		{ // 重定向
 			path: '/',
 			redirect: '/index'

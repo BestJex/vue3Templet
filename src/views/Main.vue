@@ -4,7 +4,7 @@
 			<div class="common_width main_header flex flex_align_center ">
 				<div style="width:20%">
 					<router-link to="/index">
-						<img src="../assets/1.png" style="height: 60px;" />
+						<img src="../assets/logo.png" style="height: 60px;" />
 					</router-link>
 				</div>
 				<div style="width:80%"><MyHeader /></div>

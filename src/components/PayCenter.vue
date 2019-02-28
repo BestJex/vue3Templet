@@ -1,13 +1,9 @@
 <template>
-	<div><MyBanner/></div>
+	<div>支付中心</div>
 </template>
 
 <script>
-	import MyBanner from '@/components/Banner';
 	export default {
-		components: {
-			MyBanner
-		},
 		data() {
 			return {
 

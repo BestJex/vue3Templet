@@ -8,7 +8,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
 	state: {
 		w: document.documentElement.offsetWidth || document.body.offsetWidth,
-		h: document.documentElement.offsetHeight || document.body.offsetHeight,
+		h: document.documentElement.clientHeight || document.body.clientHeight,
 		login: false,
 	},
 	mutations,

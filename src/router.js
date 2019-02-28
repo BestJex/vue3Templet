@@ -46,6 +46,19 @@ export default new Router({
 			component: () =>
 				import ('./views/page7.vue')
 		}]
+	},{
+			path: '/login',
+			name: 'login',
+			component: () => import('./views/Login.vue')
+		}, {
+			path: '/register',
+			name: 'register',
+			component: () => import('./views/Register.vue')
+		},  { 
+		path: '/help',
+		name: 'help',
+		component: () =>
+			import ('./views/help.vue')
 	}, { // 重定向
 		path: '/',
 		redirect: '/index'

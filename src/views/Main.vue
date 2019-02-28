@@ -1,6 +1,7 @@
 <template>
 	<div class="main  ">
 		<div class="fixed" style="background: #fff;">
+			<MyTopNav/>
 			<div class="common_width main_header flex flex_align_center ">
 				<div style="width:20%">
 					<router-link to="/index">
@@ -17,10 +18,12 @@
 	</div>
 </template>
 <script>
+import MyTopNav from '../components/TopNav';
 import MyHeader from '../components/Header';
 import MyFooter from '../components/Footer';
 export default {
 	components: {
+		MyTopNav,
 		MyHeader,
 		MyFooter
 	},
@@ -54,7 +57,7 @@ export default {
 	.main_show {
 		padding: 10px 0;
 		min-height: 800px;
-		margin-top:120px;
+		margin-top:160px;
 	}
 	.main_footer {
 		border-top: 3px solid @borderc5;

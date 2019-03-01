@@ -7,36 +7,41 @@
 					class=""
 					label-position="left"
 					label-width="70px"
-					:model="regForm"
+					:model="regFormData"
 					:rules="formRules"
 					ref="regForm"
 				>
-					<!-- <el-form-item label="手机号">
-						<el-input v-model="regForm.phone"></el-input>
-					</el-form-item>
-					<el-form-item label="验证码">
-						<el-input v-model="regForm.sms"></el-input>
-					</el-form-item> -->
-					<!-- <no-ssr> -->
 					<PhoneSms
 						ref="phoneSms"
-						:formData="regForm"
+						:formData="regFormData"
 						:isRequired="true"
 						labelPosition="left"
 						labelWidth="70px"
 					/>
-					<!-- </no-ssr> -->
 					<el-form-item label="密码" prop="pwd">
-						<el-input v-model="regForm.pwd" type="password"></el-input>
+						<el-input v-model="regFormData.pwd" type="password"></el-input>
 					</el-form-item>
 					<el-form-item label="确认密码" prop="pwd1">
-						<el-input v-model="regForm.pwd1" type="password"></el-input>
+						<el-input v-model="regFormData.pwd1" type="password"></el-input>
 					</el-form-item>
 					<el-form-item class="flex flex_end">
 						已有账号，去 <span @click="goLogin" class="go_login pointer">登录 </span>
 					</el-form-item>
+					<el-form-item> </el-form-item>
 				</el-form>
 				<div class="btn">
+					<div style="margin:20px 0" class="flex flex_around">
+						<CheckBox
+							:checked="regChecked"
+							size="16px"
+							color="#000"
+							@checkClick="checkClick"
+						>
+							<span style="padding-left:5px ;"
+								>我已阅读并同意<span style="color:red;">用户注册协议</span></span
+							>
+						</CheckBox>
+					</div>
 					<el-button type="primary" @click="submitForm('regForm')">注册</el-button>
 				</div>
 			</div>
@@ -46,15 +51,18 @@
 
 <script>
 import PhoneSms from '../components/PhoneSms';
+import CheckBox from '../components/CheckBox';
 export default {
 	components: {
-		PhoneSms
+		PhoneSms,
+		CheckBox
 	},
 	data() {
 		let _this = this;
 		return {
 			height: this.$store.state.h + 'px',
-			regForm: {
+			regChecked: false,
+			regFormData: {
 				phone: '1851143664',
 				sms: '123',
 				pwd: '11111',
@@ -65,15 +73,16 @@ export default {
 				pwd1: [
 					{
 						trigger: ['blur', 'change'],
+						required: true,
 						validator: (rule, value, callback) => {
-							let lengthPwd = _this.regForm.pwd.length;
-							if (_this.regForm.pwd) {
-								if (value === _this.regForm.pwd) {
+							let lengthPwd = _this.regFormData.pwd.length;
+							if (_this.regFormData.pwd) {
+								if (value === _this.regFormData.pwd) {
 									callback();
+									return;
 								} else {
-									if (value.length >= lengthPwd) {
-										callback(new Error('两次密码不一致'));
-									}
+									callback(new Error('两次密码不一致'));
+									return;
 								}
 							}
 						}
@@ -85,16 +94,29 @@ export default {
 	watch: {},
 	methods: {
 		goLogin() {
-			this.$router.push('/index');
+			this.$router.push('/login');
 		},
-		 submitForm(formName) {
-			 console.log(this.$refs[formName])
+		checkClick(r) {
+			this.regChecked = r;
+		},
+		submitForm(formName) {
+			let _this = this;
+			this.$refs['phoneSms'].phoneSms();
 			this.$refs[formName].validate(valid => {
-				console.log(valid)
 				if (valid) {
-					
+					if (_this.regChecked) {
+						_this.$message({
+							message: '注册成功',
+							type: 'success'
+						});
+					} else {
+						_this.$message({
+							message: '请勾选注册协议',
+							type: 'warning'
+						});
+					}
 				} else {
-					console.log('ppp')
+					console.log('ppp');
 				}
 			});
 		}
@@ -112,8 +134,8 @@ export default {
 	.reg_form {
 		background: rgba(255, 255, 255, 0.4);
 		width: 500px;
-		padding: 50px 20px;
-		margin-top: 5%;
+		padding: 50px 50px 50px 20px;
+		margin: 100px 6% 0 0;
 		.reg_title {
 			font-size: 30px;
 			font-weight: bold;
@@ -131,7 +153,6 @@ export default {
 		}
 	}
 	.btn {
-		margin-top: 40px;
 		.el-button {
 			width: 100%;
 			font-size: 24px;

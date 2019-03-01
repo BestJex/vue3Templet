@@ -1,9 +1,14 @@
 <template>
-	<div>页面3</div>
+	<div class="common_width">页面3
+	<DownMenu/></div>
 </template>
 
 <script>
-	export default {
+import DownMenu from '../components/DownMenu';
+export default {
+	components: {
+		DownMenu
+	},
 		data() {
 			return {
 

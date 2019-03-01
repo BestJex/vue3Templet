@@ -29,6 +29,12 @@ export default {
 				{
 					pic: require('../assets/banner/4.jpg'),
 					alt: '4'
+				},{
+					pic: require('../assets/banner/5.jpg'),
+					alt: '5'
+				},{
+					pic: require('../assets/banner/6.jpg'),
+					alt: '6'
 				}
 			]
 		};
@@ -66,13 +72,13 @@ export default {
 	width: 100%;
 	height: 100%;
 	background-repeat: no-repeat !important;
-	background-position: center 30% !important;
+	background-position: center 10% !important;
 	background-size: cover !important; //cover contain
 }
 @media screen and (max-width: 1920px) and (min-width: 1400px) {
 	/deep/.el-carousel {
 		.el-carousel__container {
-			height: 666px;
+			height: 1006px;
 		}
 	}
 }

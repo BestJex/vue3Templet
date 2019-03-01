@@ -36,9 +36,9 @@
 			</div>
 			<div class="flex flex_align_center flex_around" style="margin-top: 40px;">
 				<div class="flex flex_align_center">
-					<div style="padding:0 10px;">Copyright @ 2019 北京车驰合众科技有限公司</div>
+					<div style="padding:0 10px;">Copyright @ 2019 XXXXXX有限公司</div>
 					<img src="../assets/GFA.png" alt="" />
-					<div>京ICP备18061093号</div>
+					<div>京ICP备18035969号</div>
 				</div>
 			</div>
 	</div>

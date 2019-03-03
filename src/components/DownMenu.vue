@@ -8,42 +8,44 @@
 					:class="currentIdx.a == item.id ? 'menu_active_a' : ''"
 					@click="downMenuClick('a', item.id)"
 				>
-					<span>{{ item.title }}</span
-					><i class="iconfont">{{ currentIdx.a == item.id ? '&#xe692;' : '&#xe6ac;' }}</i>
+					<span>{{ item.title }}</span>
+					<i class="iconfont">{{ currentIdx.a == item.id ? '&#xe692;' : '&#xe6ac;' }}</i>
 				</div>
 				<div :class="currentIdx.a == item.id ? 'slide_down' : 'slide_up'">
 					<!-- 存在二级菜单 -->
-					<div v-for="(item1, index1) in item.list" :key="index1" v-if="item1.typ">
+					<div v-for="(item1, index1) in item.list" :key="index1">
 						<!-- 存在三级菜单 -->
-						<div
-							class="menu menu_b flex flex_align_center pointer"
-							:class="currentIdx.b == item1.id ? 'menu_active_b' : ''"
-							@click="downMenuClick('b', item1.id)"
-						>
-							<span>{{ item1.title }}</span
-							><i class="iconfont">{{
-								currentIdx.b == item1.id ? '&#xe692;' : '&#xe6ac;'
-							}}</i>
-						</div>
-						<div :class="currentIdx.b == item1.id ? 'slide_down' : 'slide_up'">
+						<div v-if="item1.typ">
 							<div
-								class="menu menu_c pointer"
-								v-for="(item2, index2) in item1.list"
-								:key="index2"
-								:class="currentIdx.c == item2.id ? 'menu_active_c' : ''"
-								@click="downMenuClick('c', item2.id)"
+								class="menu menu_b flex flex_align_center pointer"
+								:class="currentIdx.b == item1.id ? 'menu_active_b' : ''"
+								@click="downMenuClick('b', item1.id)"
 							>
-								{{ item2.title }}
+								<span>{{ item1.title }}</span>
+								<i class="iconfont">
+									{{ currentIdx.b == item1.id ? '&#xe692;' : '&#xe6ac;' }}
+								</i>
+							</div>
+							<div :class="currentIdx.b == item1.id ? 'slide_down' : 'slide_up'">
+								<div
+									class="menu menu_c pointer"
+									v-for="(item2, index2) in item1.list"
+									:key="index2"
+									:class="currentIdx.c == item2.id ? 'menu_active_c' : ''"
+									@click="downMenuClick('c', item2.id)"
+								>
+									{{ item2.title }}
+								</div>
 							</div>
 						</div>
-					</div>
-					<div
-						v-else
-						class="menu menu_b pointer"
-						:class="currentIdx.b == item1.id ? 'menu_active_c' : ''"
-						@click="downMenuClick('b', item1.id)"
-					>
-						{{ item1.title }}
+						<div
+							v-else
+							class="menu menu_b pointer"
+							:class="currentIdx.b == item1.id ? 'menu_active_c' : ''"
+							@click="downMenuClick('b', item1.id)"
+						>
+							{{ item1.title }}
+						</div>
 					</div>
 				</div>
 			</div>

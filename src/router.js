@@ -59,6 +59,11 @@ export default new Router({
 		name: 'help',
 		component: () =>
 			import ('./views/help.vue')
+	},{ 
+		path: '/CV',
+		name: 'CV',
+		component: () =>
+			import ('./views/xyz.vue')
 	}, { // 重定向
 		path: '/',
 		redirect: '/index'

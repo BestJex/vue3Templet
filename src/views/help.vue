@@ -13,29 +13,7 @@
 		<div class="help_show common_width" style="margin-top: 100px;">
 			<div class="flex flex_between">
 				<div style="width: 20%;">
-					<el-menu :default-active="menuActive" @open="handleOpen" @close="handleClose" unique-opened :default-openeds="menuOpeneds">
-						<el-submenu
-							v-for="(item, index) in menuData"
-							:key="index"
-							v-if="item.typ"
-							:index="item.id"
-						>
-
-							<template slot="title">
-								<span>{{ item.title }}</span>
-							</template>
-							<el-menu-item
-								v-for="(item1, index1) in item.list"
-								:key="index1"
-								:index="item1.id"
-								@click="menuClick(item1.id)"
-								>{{ item1.title }}</el-menu-item
-							>
-						</el-submenu>
-						<el-menu-item v-else :index="item.id" @click="menuClick(item.id)">
-							<span>{{ item.title }}</span>
-						</el-menu-item>
-					</el-menu>
+					<DownMenu/>
 				</div>
 				<div style="width: 78%;">
 					<div v-if="menuActive==0">
@@ -57,6 +35,7 @@
 
 <script>
 import MyFooter from '../components/Footer';
+import DownMenu from '../components/DownMenu';
 import HelpCenter from '../components/HelpCenter';
 import ServiceCenter from '../components/ServiceCenter';
 import PayCenter from '../components/PayCenter';
@@ -64,6 +43,7 @@ export default {
 	components: {
 		MyFooter,
 		HelpCenter,
+		DownMenu,
 		ServiceCenter,
 		PayCenter
 	},

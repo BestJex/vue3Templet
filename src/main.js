@@ -13,10 +13,9 @@ Vue.config.productionTip = false
 Vue.prototype.$store = store
 
 router.beforeEach((to, from, next) => {
-
 	if (to.matched.length === 0) {
 		next({
-			path: '/page404'
+			path: '/404'
 		})
 	} else {
 

@@ -1,6 +1,5 @@
 <template>
-	<div class="common_width">页面3
-	<DownMenu/></div>
+	<div class="common_width">页面3</div>
 </template>
 
 <script>

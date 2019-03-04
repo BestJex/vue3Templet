@@ -41,7 +41,7 @@ export default new Router({
 			component: () =>
 				import ('./views/page6.vue')
 		}, {
-			path: '/page7',
+			path: '/show',
 			name: 'page7',
 			component: () =>
 				import ('./views/page7.vue')
@@ -59,6 +59,12 @@ export default new Router({
 		name: 'help',
 		component: () =>
 			import ('./views/help.vue')
+	},
+	{ 
+		path: '/404',
+		name: '404',
+		component: () =>
+			import ('./views/404.vue')
 	},{ 
 		path: '/CV',
 		name: 'CV',

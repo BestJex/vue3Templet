@@ -53,7 +53,7 @@
 				v-else
 				class="menu menu_a pointer"
 				:class="currentIdx.a == item.id ? 'menu_active_a' : ''"
-				@click="downMenuClick('c', item.id)"
+				@click="downMenuClick('a', item.id)"
 			>
 				{{ item.title }}
 			</div>
@@ -155,6 +155,13 @@ export default {
 	methods: {
 		downMenuClick(typ, idx) {
 			console.log(idx);
+			if(typ=='a'){
+				this.currentIdx.b='s',
+				this.currentIdx.c='s'
+			}
+			if(typ=='b'){
+				this.currentIdx.c='s'
+			}
 			if (idx === this.currentIdx[typ]) {
 				this.currentIdx[typ] = 's';
 			} else {

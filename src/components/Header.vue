@@ -113,7 +113,7 @@ export default {
 					typ: false //是否跳转其它网址
 				},
 				{
-					path: '/page7',
+					path: '/show',
 					name: '页面7',
 					typ: false //是否跳转其它网址
 				}

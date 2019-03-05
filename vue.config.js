@@ -25,9 +25,22 @@ module.exports = {
 				plugins: [
 					require("postcss-px2rem")({
 						'remUnit': 75, //根据设计稿调整
-					})
+					}),
+					require('autoprefixer')
+				]
+			},
+			less: {
+				test: /\.(le|c)ss$/,
+				use: [
+					'style-loader',
+					'css-loader',
+					'less-loader',
+					{
+						loader: "postcss-loader"
+					}
 				]
 			}
+
 		}
 	},
 	devServer: {

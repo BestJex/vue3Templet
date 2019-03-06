@@ -65,11 +65,6 @@ export default new Router({
 		name: '404',
 		component: () =>
 			import ('./views/404.vue')
-	},{ 
-		path: '/CV',
-		name: 'CV',
-		component: () =>
-			import ('./views/xyz.vue')
 	}, { // 重定向
 		path: '/',
 		redirect: '/index'
